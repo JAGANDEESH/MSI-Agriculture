@@ -2,12 +2,14 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CalendarDays, BookOpen, ArrowRight, User, Clock } from 'lucide-react';
-
+import agritech from '../assets/AgriTech.jpg';
+import greeninvo from '../assets/Greeninovo.jpg';
+import greenveg from '../assets/greenveg.jpg';
 const blogs = [
   {
     title: 'AgriTech Breakthroughs: What Farmers Need to Know in 2025',
     description: 'From precision farming to AI in irrigation — discover the tools transforming Indian agriculture.',
-    image: 'https://source.unsplash.com/800x600/?farming,technology',
+    image: agritech,
     date: 'April 5, 2025',
     author: 'MSI Insights',
     tag: 'Agriculture',
@@ -16,7 +18,7 @@ const blogs = [
   {
     title: 'Green Startups Leading India\'s Climate Innovation',
     description: 'Explore the most promising eco-entrepreneurs solving sustainability challenges across the nation.',
-    image: 'https://source.unsplash.com/800x600/?startup,green',
+    image: greeninvo,
     date: 'April 2, 2025',
     author: 'MSI Editorial',
     tag: 'Innovation',
@@ -25,7 +27,7 @@ const blogs = [
   {
     title: 'Community Health & Organic Living: A Rural Movement',
     description: 'How health education and organic practices are reshaping rural well-being, led by grassroots leaders.',
-    image: 'https://source.unsplash.com/800x600/?organic,health',
+    image: greenveg,
     date: 'March 28, 2025',
     author: 'Field Reports',
     tag: 'Health',
