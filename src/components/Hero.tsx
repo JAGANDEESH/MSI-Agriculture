@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import consumer from '../assets/Consumer.png';
+import expert from '../assets/Expert.png';
+import business from '../assets/Business(1).jpg';
 const headlines = [
   "Transforming Agriculture for a Sustainable Future",
   "Empowering Farmers with Modern Technology",
@@ -13,9 +15,10 @@ const headlines = [
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2340&q=80",
-  "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2340&q=80",
-  "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=2340&q=80",
-  "https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=2340&q=80",
+  "https://images.unsplash.com/photo-1556761175-4b46a572b786",
+consumer,
+  expert,
+  business,
 ];
 
 const Hero: React.FC = () => {
