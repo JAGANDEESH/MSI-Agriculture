@@ -1,11 +1,34 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
-      {/* Enhanced Decorative Gradients */}
+      {/* Curved Top Edge */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] -translate-y-full z-10">
+        <svg
+          className="relative block w-full h-16"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#111827"
+            d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
+          ></path>
+        </svg>
+      </div>
+
+      {/* Background Gradients */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -bottom-10 right-0 w-72 h-72 bg-green-600/20 rounded-full blur-3xl opacity-40 animate-pulse"></div>
         <div className="absolute -top-10 left-0 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl opacity-30 animate-pulse delay-700"></div>
       </div>
@@ -22,11 +45,11 @@ const Footer: React.FC = () => {
               Transforming agriculture and empowering communities through sustainable practices
               and innovative solutions that matter.
             </p>
-            {/* Social Media Links */}
+            {/* Social Icons */}
             <div className="flex space-x-4 pt-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
+              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                 <a
-                  key={index}
+                  key={i}
                   href="#"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1"
                 >
@@ -44,8 +67,14 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 text-sm">
               {['About Us', 'Farmers', 'Entrepreneurs', 'Contact'].map((item) => (
-                <li key={item} className="transform transition-transform duration-200 hover:translate-x-2">
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-green-400 transition flex items-center">
+                <li
+                  key={item}
+                  className="transform transition-transform duration-200 hover:translate-x-2"
+                >
+                  <a
+                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                    className="hover:text-green-400 transition flex items-center group"
+                  >
                     <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
                     {item}
                   </a>
@@ -65,10 +94,13 @@ const Footer: React.FC = () => {
                 'Farmer Training',
                 'Natural Angadis',
                 'Health Initiatives',
-                'Environmental Projects'
+                'Environmental Projects',
               ].map((item) => (
-                <li key={item} className="transform transition-transform duration-200 hover:translate-x-2">
-                  <a href="#" className="hover:text-green-400 transition flex items-center">
+                <li
+                  key={item}
+                  className="transform transition-transform duration-200 hover:translate-x-2"
+                >
+                  <a href="#" className="hover:text-green-400 transition flex items-center group">
                     <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
                     {item}
                   </a>
@@ -77,7 +109,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white mb-6 uppercase tracking-wide relative inline-block">
               Contact Us
@@ -112,11 +144,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
+        {/* Newsletter Section */}
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="max-w-xl mx-auto text-center">
             <h5 className="text-white text-lg font-semibold mb-4">Subscribe to Our Newsletter</h5>
-            <p className="text-sm mb-6 opacity-80">Stay updated with our latest initiatives and community impact.</p>
+            <p className="text-sm mb-6 opacity-80">
+              Stay updated with our latest initiatives and community impact.
+            </p>
             <form className="flex flex-col sm:flex-row gap-4 justify-center">
               <input
                 type="email"
@@ -133,7 +167,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Enhanced Footer Bottom */}
+        {/* Footer Bottom */}
         <div className="border-t border-gray-800 mt-16 pt-8 text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500">

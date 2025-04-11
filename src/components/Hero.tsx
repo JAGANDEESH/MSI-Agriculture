@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   
     const timer = setInterval(() => {
       handleSlideChange(1);
-    }, 7000);
+    }, 2000);
   
     return () => clearInterval(timer);
   }, [currentSlide, isHovered]);
