@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import consumer from '../assets/Consumer.png';
 import expert from '../assets/Expert.png';
 import business from '../assets/Business(1).jpg';
+
 const headlines = [
   "Transforming Agriculture for a Sustainable Future",
   "Empowering Farmers with Modern Technology",
@@ -16,7 +17,7 @@ const headlines = [
 const backgroundImages = [
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2340&q=80",
   "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-consumer,
+  consumer,
   expert,
   business,
 ];
@@ -25,15 +26,15 @@ const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+
   useEffect(() => {
     if (isHovered) return;
   
     const timer = setInterval(() => {
-      handleSlideChange(1); // Next slide
-    }, 7000
-  );
+      handleSlideChange(1);
+    }, 7000);
   
-    return () => clearInterval(timer); // Cleanup
+    return () => clearInterval(timer);
   }, [currentSlide, isHovered]);
 
   const handleSlideChange = (dir: number) => {
@@ -77,9 +78,23 @@ const Hero: React.FC = () => {
     },
   };
 
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        type: "spring",
+        stiffness: 400,
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  };
+
   return (
     <div
-      className="relative h-screen overflow-hidden pt-16 md:pt-0"
+      className="relative h-[100svh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -98,35 +113,32 @@ const Hero: React.FC = () => {
             opacity: { duration: 0.3 },
           }}
         >
-          <img
-            src={backgroundImages[currentSlide]}
-            alt={`Slide ${currentSlide}`}
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+          <div className="relative h-full">
+            <img
+              src={backgroundImages[currentSlide]}
+              alt={`Slide ${currentSlide}`}
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          </div>
         </motion.div>
       </AnimatePresence>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-      <div className="max-w-4xl mx-auto w-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex flex-col justify-center">
-
-  
-
+        <div className="max-w-4xl mx-auto w-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex flex-col justify-center">
           {/* Headline */}
           <AnimatePresence mode="wait">
-          <motion.h1
-  key={`headline-${currentSlide}`}
-  variants={textVariants}
-  initial="enter"
-  animate="center"
-  exit="exit"
-  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight sm:leading-snug md:leading-snug  bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-transparent bg-clip-text drop-shadow-lg"
->
-  {headlines[currentSlide]}
-</motion.h1>
-
-
+            <motion.h1
+              key={`headline-${currentSlide}`}
+              variants={textVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight sm:leading-snug md:leading-snug bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-transparent bg-clip-text drop-shadow-lg"
+            >
+              {headlines[currentSlide]}
+            </motion.h1>
           </AnimatePresence>
 
           {/* Subtext */}
@@ -137,7 +149,7 @@ const Hero: React.FC = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className="text-lg md:text-xl text-gray-100 mb-8 drop-shadow-md"
+              className="text-base sm:text-lg md:text-xl text-gray-100 mb-8 max-w-2xl drop-shadow-md"
             >
               Empowering farmers, entrepreneurs, and communities through regenerative agriculture
               and sustainable business practices.
@@ -146,37 +158,57 @@ const Hero: React.FC = () => {
 
           {/* Buttons */}
           <motion.div
-            className="flex gap-4 mb-12"
+            className="flex flex-col sm:flex-row gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <a
+            <motion.a
               href="#contact"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 shadow-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center sm:justify-start gap-2 shadow-lg transform-gpu"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
             >
-              Join Our Mission <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
+              <span>Join Our Mission</span>
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                <ArrowRight className="w-5 h-5" />
+              </motion.span>
+            </motion.a>
+            <motion.a
               href="#about"
-              className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium border border-white/20 backdrop-blur-md"
+              className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium border border-white/20 backdrop-blur-md text-center sm:text-left transform-gpu"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
             >
               Learn More
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Controls */}
-          <div className="flex items-center gap-6">
-            <button
+          <motion.div 
+            className="flex items-center gap-6 justify-center sm:justify-start"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <motion.button
               onClick={() => handleSlideChange(-1)}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transform-gpu"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
               aria-label="Previous"
             >
-              <ChevronLeft />
-            </button>
+              <ChevronLeft className="w-6 h-6" />
+            </motion.button>
             <div className="flex gap-3">
               {backgroundImages.map((_, idx) => (
-                <button
+                <motion.button
                   key={idx}
                   onClick={() => {
                     setDirection(idx > currentSlide ? 1 : -1);
@@ -187,30 +219,24 @@ const Hero: React.FC = () => {
                       ? "bg-white scale-[1.4]"
                       : "bg-white/50 hover:bg-white/70"
                   } transition-all duration-300`}
+                  whileHover={{ scale: 1.5 }}
+                  whileTap={{ scale: 0.9 }}
                 />
               ))}
             </div>
-            <button
+            <motion.button
               onClick={() => handleSlideChange(1)}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transform-gpu"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
               aria-label="Next"
             >
-              <ChevronRight />
-            </button>
-          </div>
+              <ChevronRight className="w-6 h-6" />
+            </motion.button>
+          </motion.div>
         </div>
       </div>
-
-      {/* Progress Bar */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20">
-        <motion.div
-          key={`progress-${currentSlide}`}
-          className="h-full bg-white"
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 7, ease: "linear" }}
-        />
-      </div> */}
     </div>
   );
 };
