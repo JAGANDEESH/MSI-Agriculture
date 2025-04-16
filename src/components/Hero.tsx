@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import consumer from '../assets/Consumer.png';
-import expert from '../assets/Expert.png';
-import business from '../assets/Business(1).jpg';
+import consumer from "../assets/Consumer.png";
+import expert from "../assets/Expert.png";
+import business from "../assets/Business(1).jpg";
+import img2 from "../assets/img2.png";
 
 const headlines = [
   "Transforming Agriculture for a Sustainable Future",
@@ -16,7 +17,7 @@ const headlines = [
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2340&q=80",
-  "https://images.unsplash.com/photo-1556761175-4b46a572b786",
+  img2,
   consumer,
   expert,
   business,
@@ -29,18 +30,20 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     if (isHovered) return;
-  
+
     const timer = setInterval(() => {
       handleSlideChange(1);
-    }, 2000);
-  
+    }, 5000);
+
     return () => clearInterval(timer);
   }, [currentSlide, isHovered]);
 
   const handleSlideChange = (dir: number) => {
     setDirection(dir);
     setCurrentSlide((prev) =>
-      dir === 1 ? (prev + 1) % backgroundImages.length : (prev - 1 + backgroundImages.length) % backgroundImages.length
+      dir === 1
+        ? (prev + 1) % backgroundImages.length
+        : (prev - 1 + backgroundImages.length) % backgroundImages.length
     );
   };
 
@@ -62,39 +65,22 @@ const Hero: React.FC = () => {
   };
 
   const textVariants = {
-    enter: {
-      opacity: 0,
-      y: 30,
-    },
-    center: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7 },
-    },
-    exit: {
-      opacity: 0,
-      y: -30,
-      transition: { duration: 0.5 },
-    },
+    enter: { opacity: 0, y: 30 },
+    center: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+    exit: { opacity: 0, y: -30, transition: { duration: 0.5 } },
   };
 
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      transition: {
-        duration: 0.2,
-        type: "spring",
-        stiffness: 400,
-      },
+      transition: { duration: 0.2, type: "spring", stiffness: 400 },
     },
-    tap: {
-      scale: 0.95,
-    },
+    tap: { scale: 0.95 },
   };
 
   return (
     <div
-      className="relative h-[100svh] overflow-hidden"
+      className="relative h-[100svh] overflow-visible"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -126,7 +112,7 @@ const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-        <div className="max-w-4xl mx-auto w-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex flex-col justify-center">
+        <div className="max-w-4xl mx-auto w-full min-h-[400px] flex flex-col justify-center overflow-visible">
           {/* Headline */}
           <AnimatePresence mode="wait">
             <motion.h1
@@ -135,7 +121,7 @@ const Hero: React.FC = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight sm:leading-snug md:leading-snug bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-transparent bg-clip-text drop-shadow-lg"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 pb-2 leading-tight bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-transparent bg-clip-text drop-shadow-lg overflow-visible"
             >
               {headlines[currentSlide]}
             </motion.h1>
@@ -171,15 +157,12 @@ const Hero: React.FC = () => {
               whileTap="tap"
             >
               <span>Join Our Mission</span>
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
+              <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                 <ArrowRight className="w-5 h-5" />
               </motion.span>
             </motion.a>
             <motion.a
-              href="#about"
+              href="/LearnMore"
               className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium border border-white/20 backdrop-blur-md text-center sm:text-left transform-gpu"
               variants={buttonVariants}
               whileHover="hover"
@@ -190,7 +173,7 @@ const Hero: React.FC = () => {
           </motion.div>
 
           {/* Controls */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-6 justify-center sm:justify-start"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -215,9 +198,7 @@ const Hero: React.FC = () => {
                     setCurrentSlide(idx);
                   }}
                   className={`w-2.5 h-2.5 rounded-full ${
-                    currentSlide === idx
-                      ? "bg-white scale-[1.4]"
-                      : "bg-white/50 hover:bg-white/70"
+                    currentSlide === idx ? "bg-white scale-[1.4]" : "bg-white/50 hover:bg-white/70"
                   } transition-all duration-300`}
                   whileHover={{ scale: 1.5 }}
                   whileTap={{ scale: 0.9 }}

@@ -133,6 +133,7 @@ const Product: React.FC = () => {
                 <motion.button
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={()=>{"/LearnMore"}}
                   className="inline-flex items-center text-sm font-semibold text-gray-900 group"
                 >
                   Learn More

@@ -25,14 +25,13 @@ const SupportPillar: React.FC<SupportPillarProps> = ({ icon, title, description 
       <div className="ml-4">
         <h4 className="font-bold text-lg mb-2 text-gray-800">{title}</h4>
         <p className="text-gray-600">{description}</p>
-        <button className="mt-3 flex items-center text-green-400 font-medium text-sm hover:text-blue-800 transition-colors">
+        <button className="mt-3 flex items-center text-green-400 font-medium text-sm hover:text-blue-800 transition-colors" onClick={() => window.location.href = "/LearnMore"}>
           Learn more <ArrowRight className="ml-1 h-4 w-4" />
         </button>
       </div>
     </div>
   );
 };
-
 interface GoalCardProps {
   icon: React.ReactNode;
   title: string;

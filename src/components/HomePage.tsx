@@ -8,6 +8,7 @@ import FocusAreas from '../components/FocusAreas';
 import ImpactMetrics from '../components/ImpactMetrics';
 import PillarSection from '../components/PillarSection';
 import { Leaf, Users, Store, Brain, BarChart as ChartBar } from 'lucide-react';
+import Testimonial from './Testimonial';
 // import FeatureCard from './FeatureCard';
 
 
@@ -76,8 +77,10 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      <Testimonial/>
       <FocusAreas />
       <ImpactMetrics />
+   
     </main>
   );
 };

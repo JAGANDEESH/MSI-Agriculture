@@ -2,7 +2,8 @@ import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import LoadingPage from './components/LoadingPage'; // 🔥 import the custom loading page
+import LoadingPage from './components/LoadingPage';
+
 import ResearchAndDevelopment from './components/ResearchAndDevelopment';
 import Event from './components/News/Event';
 import Media from './components/News/Media';
@@ -10,6 +11,7 @@ import Testimonial from './components/Testimonial';
 import Blog from './components/Blog';
 import Support from './components/Support';
 import Contact from './components/Contact';
+import LearnMore from './components/LearnMore';
 
 // Lazy-loaded pages
 const HomePage = lazy(() => import('./components/HomePage'));
@@ -38,13 +40,14 @@ function App() {
           <Route path="/exportsinnovations" element={<ExportsInnovations />} />
           <Route path="/businessfunding" element={<BusinessFunding />} />
           <Route path="/product" element={<Product />} />
-          <Route path='/ResearchAndDevelopment' element={<ResearchAndDevelopment/>}/>
-          <Route path='/event' element={<Event/>}/>
-          <Route path='/media' element={<Media/>}/>
-          <Route path='/testimonial'element={<Testimonial/>}/>
-          <Route path='/blog' element={<Blog/>}/>
-          <Route path='/support' element={<Support/>}/>
-          <Route path='/contact' element={<Contact/>}/>
+          <Route path="/ResearchAndDevelopment" element={<ResearchAndDevelopment />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="/testimonial" element={<Testimonial />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/LearnMore" element={<LearnMore />} />
         </Routes>
       </Suspense>
       <Footer />

@@ -88,11 +88,11 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                 }`}
               />
               <span
-                className={`text-lg font-bold whitespace-nowrap ${
+                className={`text-2xl font-bold whitespace-nowrap ${
                   isHome && !isScrolled ? 'text-white' : 'text-gray-900'
                 }`}
               >
-                <span className="text-green-600">MS</span> International
+                <span className="text-green-600 ">MS</span> International
               </span>
             </motion.a>
 

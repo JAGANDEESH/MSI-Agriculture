@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
               <Mail className="w-6 h-6 text-green-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-gray-800">Email</p>
-                <a href="mailto:support@msi.org" className="text-green-600 hover:underline">support@msi.org</a>
+                <a href="mailto:smurugesan@iofa.co.in" className="text-green-600 hover:underline">smurugesan@iofa.co.in</a>
               </div>
             </div>
 
@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
               <Phone className="w-6 h-6 text-green-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-gray-800">Phone</p>
-                <a href="tel:+919999999999" className="text-green-600 hover:underline">+91 99999 99999</a>
+                <a href="tel:+919444781692" className="text-green-600 hover:underline">+91 94447 81692</a>
               </div>
             </div>
 
@@ -106,9 +106,11 @@ const Contact: React.FC = () => {
               <div>
                 <p className="text-lg font-semibold text-gray-800">Office</p>
                 <p className="text-gray-600">
-                  MS International Headquarters<br />
-                  123 Green Road, Sustainability Park<br />
-                  Pune, Maharashtra 411001, India
+                  MS International <br />
+                  38,28,TVS Flats
+ Venkatnarayana Road,
+ T.Nagar,<br />
+ Chennai - 600017
                 </p>
               </div>
             </div>

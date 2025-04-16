@@ -118,26 +118,29 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm">
               <li className="group">
                 <a
-                  href="mailto:contact@msi.org"
+                  href="mailto: smurugesan@iofa.co.in"
                   className="flex items-center p-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
                 >
                   <Mail className="w-5 h-5 text-green-400 mr-3 transform transition-transform group-hover:scale-110" />
-                  <span className="hover:text-green-400 transition">contact@msi.org</span>
+                  <span className="hover:text-green-400 transition"> smurugesan@iofa.co.in</span>
                 </a>
               </li>
               <li className="group">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919444781692"
                   className="flex items-center p-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
                 >
                   <Phone className="w-5 h-5 text-green-400 mr-3 transform transition-transform group-hover:scale-110" />
-                  <span className="hover:text-green-400 transition">+91 98765 43210</span>
+                  <span className="hover:text-green-400 transition">+91 94447 81692</span>
                 </a>
               </li>
               <li className="group">
                 <div className="flex items-start p-3 rounded-lg hover:bg-gray-800 transition-all duration-300">
                   <MapPin className="w-5 h-5 text-green-400 mr-3 mt-1 transform transition-transform group-hover:scale-110" />
-                  <span>123 Sustainable Way,<br />Green City, 560001</span>
+                  <span> 38,28,TVS Flats
+ Venkatnarayana Road,
+ T.Nagar, <br />Chennai - 600017
+ </span>
                 </div>
               </li>
             </ul>
