@@ -32,12 +32,12 @@ const supportOptions = [
 const contactChannels = [
   {
     icon: Phone,
-    text: '+91 1800-123-4567',
+    text: '+91 94447 81692',
     bg: 'bg-green-100/50'
   },
   {
     icon: Mail,
-    text: 'support@msi.com',
+    text: 'smurugesan@iofa.co.in',
     bg: 'bg-blue-100/50'
   },
   {

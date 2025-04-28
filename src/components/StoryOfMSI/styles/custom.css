@@ -1,0 +1,88 @@
+/* Grain texture for background */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a7856;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D5E40;
+}
+
+/* Typography enhancements */
+@media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+  }
+  
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 640px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Add custom gradient backgrounds */
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #2D5E40 0%, #4A7856 50%, #68925E 100%);
+}
+
+/* Subtle focus styles */
+button:focus, a:focus {
+  outline: 2px solid rgba(45, 94, 64, 0.5);
+  outline-offset: 2px;
+}
+
+/* Image hover effects */
+.hover-scale-image {
+  overflow: hidden;
+}
+
+.hover-scale-image img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-scale-image:hover img {
+  transform: scale(1.05);
+}

@@ -39,7 +39,7 @@ const entrepreneurFeatures = [
 
 const stats = [
   { value: '500+', label: 'Startups Launched' },
-  { value: '$50M+', label: 'Funding Secured' },
+  { value: '50M+', label: 'Funding Secured' },
   { value: '200+', label: 'Expert Mentors' },
   { value: '95%', label: 'Success Rate' },
 ];

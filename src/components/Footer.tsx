@@ -45,17 +45,21 @@ const Footer: React.FC = () => {
               Transforming agriculture and empowering communities through sustainable practices
               and innovative solutions that matter.
             </p>
+
             {/* Social Icons */}
             <div className="flex space-x-4 pt-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-all duration-300 transform hover:-translate-y-1">
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -66,20 +70,30 @@ const Footer: React.FC = () => {
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-green-400"></span>
             </h4>
             <ul className="space-y-3 text-sm">
-              {['About Us', 'Farmers', 'Entrepreneurs', 'Contact'].map((item) => (
-                <li
-                  key={item}
-                  className="transform transition-transform duration-200 hover:translate-x-2"
-                >
-                  <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="hover:text-green-400 transition flex items-center group"
-                  >
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/AboutUs" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  About Us
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/farming" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Farmers
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/entrepreneurship" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Entrepreneurs
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/contact" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -90,22 +104,30 @@ const Footer: React.FC = () => {
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-green-400"></span>
             </h4>
             <ul className="space-y-3 text-sm">
-              {[
-                'Farmer Training',
-                'Natural Angadis',
-                'Health Initiatives',
-                'Environmental Projects',
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="transform transition-transform duration-200 hover:translate-x-2"
-                >
-                  <a href="#" className="hover:text-green-400 transition flex items-center group">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/product" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Products
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/ResearchAndDevelopment" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Research And Development
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/Testimonial" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                 Testimonial
+                </a>
+              </li>
+              <li className="transform transition-transform duration-200 hover:translate-x-2">
+                <a href="/Support" className="hover:text-green-400 transition flex items-center group">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  Supports
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -118,11 +140,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm">
               <li className="group">
                 <a
-                  href="mailto: smurugesan@iofa.co.in"
+                  href="mailto:smurugesan@iofa.co.in"
                   className="flex items-center p-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
                 >
                   <Mail className="w-5 h-5 text-green-400 mr-3 transform transition-transform group-hover:scale-110" />
-                  <span className="hover:text-green-400 transition"> smurugesan@iofa.co.in</span>
+                  <span className="hover:text-green-400 transition">smurugesan@iofa.co.in</span>
                 </a>
               </li>
               <li className="group">
@@ -137,10 +159,7 @@ const Footer: React.FC = () => {
               <li className="group">
                 <div className="flex items-start p-3 rounded-lg hover:bg-gray-800 transition-all duration-300">
                   <MapPin className="w-5 h-5 text-green-400 mr-3 mt-1 transform transition-transform group-hover:scale-110" />
-                  <span> 38,28,TVS Flats
- Venkatnarayana Road,
- T.Nagar, <br />Chennai - 600017
- </span>
+                  <span>38, 28, TVS Flats<br />Venkatnarayana Road, T. Nagar,<br />Chennai - 600017</span>
                 </div>
               </li>
             </ul>

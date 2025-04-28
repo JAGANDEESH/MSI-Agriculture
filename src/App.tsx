@@ -12,10 +12,11 @@ import Blog from './components/Blog';
 import Support from './components/Support';
 import Contact from './components/Contact';
 import LearnMore from './components/LearnMore';
+import AboutUs from './components/AboutUs';
 
 // Lazy-loaded pages
 const HomePage = lazy(() => import('./components/HomePage'));
-const StoryOfMSI = lazy(() => import('./components/StoryOfMSI'));
+const StoryOfMSI = lazy(() => import('./components/StoryOfMSI/StoryOfMSI'));
 const Farming = lazy(() => import('./components/Services/Farmer'));
 const Entrepreneur = lazy(() => import('./components/Services/Entrepreneur'));
 const ConsumerZone = lazy(() => import('./components/Services/ConsumerZone'));
@@ -48,6 +49,7 @@ function App() {
           <Route path="/support" element={<Support />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/LearnMore" element={<LearnMore />} />
+          <Route path="/AboutUs" element={<AboutUs/>} />
         </Routes>
       </Suspense>
       <Footer />

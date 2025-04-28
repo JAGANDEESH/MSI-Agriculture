@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                   isHome && !isScrolled ? 'text-white' : 'text-gray-900'
                 }`}
               >
-                <span className="text-green-600 ">MS</span> International
+                <span className="text-green-600">MS</span> International
               </span>
             </motion.a>
 
@@ -107,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <button
-                      className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                      className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ease-in-out duration-300 ${
                         isHome && !isScrolled
                           ? 'text-white hover:bg-white/20'
                           : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
@@ -116,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                       {link.label}
                       <motion.span
                         animate={{ rotate: openDropdown === link.label ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.3 }}
                       >
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </motion.span>
@@ -127,14 +127,14 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
+                          transition={{ duration: 0.3, ease: 'easeOut' }}
                           className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md overflow-hidden z-50"
                         >
                           {link.dropdown.map((item) => (
                             <a
                               key={item.href}
                               href={item.href}
-                              className={`block px-4 py-3 text-sm whitespace-nowrap ${
+                              className={`block px-4 py-3 text-sm whitespace-nowrap transition-all duration-300 ${
                                 isActive(item.href)
                                   ? 'bg-green-50 text-green-600'
                                   : 'hover:bg-gray-50 text-gray-700'
@@ -151,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                       isHome && !isScrolled
                         ? 'text-white hover:bg-white/20'
                         : isActive(link.href)
@@ -165,17 +165,17 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
               )}
               {/* Optional: Profile & Search Icons */}
               <button className={`p-2 ${textColor}`} aria-label="Search">
-                <Search className="w-5 h-5" />
+                <Search className="w-5 h-5 transition-transform duration-300 hover:scale-105" />
               </button>
               <button className={`p-2 ${textColor}`} aria-label="Login">
-                <LogIn className="w-5 h-5" />
+                <LogIn className="w-5 h-5 transition-transform duration-300 hover:scale-105" />
               </button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className={`lg:hidden p-2 rounded-md ${textColor}`}
+              className={`lg:hidden p-2 rounded-md ${textColor} transition-transform duration-300`}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -194,7 +194,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             className="fixed inset-0 z-40 bg-white pt-24 px-6 pb-10 overflow-y-auto lg:hidden"
           >
-            <div className="space-y-2">
+            <div className="space-y-4">
               {navLinks.map((link) =>
                 link.dropdown ? (
                   <div key={link.label} className="border-b border-gray-100 pb-2">
@@ -221,7 +221,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                             <a
                               key={item.href}
                               href={item.href}
-                              className="block py-2 text-gray-600 hover:text-green-600 whitespace-nowrap"
+                              className="block py-2 text-gray-600 hover:text-green-600 whitespace-nowrap transition-all duration-300"
                             >
                               {item.label}
                             </a>
@@ -234,7 +234,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`block py-3 border-b border-gray-100 whitespace-nowrap ${
+                    className={`block py-3 border-b border-gray-100 whitespace-nowrap transition-all duration-300 ${
                       isActive(link.href) ? 'text-green-600 font-semibold' : 'text-gray-800'
                     }`}
                   >
@@ -247,7 +247,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
             <div className="mt-6 space-y-4">
               <a
                 href="#contact"
-                className="inline-block px-6 py-3 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 whitespace-nowrap"
+                className="inline-block px-6 py-3 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 transition-all duration-300"
               >
                 Contact Us
               </a>
@@ -275,7 +275,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu }) => {
                     />
                     <button
                       type="submit"
-                      className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 flex items-center justify-center"
+                      className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 flex items-center justify-center transition-all duration-300"
                     >
                       <Search className="w-4 h-4 mr-1" />
                       Search
