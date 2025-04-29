@@ -37,7 +37,7 @@ const contactChannels = [
   },
   {
     icon: Mail,
-    text: 'smurugesan@iofa.co.in',
+    text: 'msinternational.operations@gmail.com',
     bg: 'bg-blue-100/50'
   },
   {

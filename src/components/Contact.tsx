@@ -95,8 +95,8 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h5 className="text-lg font-semibold text-gray-800 mb-1">Email</h5>
-                <a href="mailto:smurugesan@iofa.co.in" className="text-green-600 hover:underline">
-                  smurugesan@iofa.co.in
+                <a href="mailto:msinternational.operations@gmail.com" className="text-green-600 hover:underline">
+                msinternational.operations@gmail.com
                 </a>
               </div>
             </div>
@@ -122,10 +122,10 @@ const Contact: React.FC = () => {
               <div>
                 <h5 className="text-lg font-semibold text-gray-800 mb-1">Office</h5>
                 <p className="text-gray-600 leading-relaxed">
-                  MS International<br />
-                  38, 28, TVS Flats,<br />
-                  Venkatnarayana Road,<br />
-                  T. Nagar, Chennai - 600017
+                M.S. International <br />
+                13A, kamarajar Street, <br />
+                Vinayagam ,<br />
+                Chennai - 600099
                 </p>
               </div>
             </div>

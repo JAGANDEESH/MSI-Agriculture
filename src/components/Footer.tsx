@@ -138,29 +138,48 @@ const Footer: React.FC = () => {
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-green-400"></span>
             </h4>
             <ul className="space-y-4 text-sm">
+            <li className="group">
+  <a
+    href="mailto:msinternational.operations@gmail.com"
+    className="flex items-start p-4 rounded-xl hover:bg-gray-800 transition-all duration-300 space-x-4"
+  >
+    <Mail className="w-5 h-5 text-green-400 mt-1 transition-transform duration-300 group-hover:scale-110" />
+    <span className="text-sm text-gray-200 hover:text-green-400 transition break-all">
+      msinternational.operations@gmail.com
+    </span>
+  </a>
+</li>
+
               <li className="group">
-                <a
-                  href="mailto:smurugesan@iofa.co.in"
-                  className="flex items-center p-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
-                >
-                  <Mail className="w-5 h-5 text-green-400 mr-3 transform transition-transform group-hover:scale-110" />
-                  <span className="hover:text-green-400 transition">smurugesan@iofa.co.in</span>
-                </a>
-              </li>
+  <div className="flex items-start p-4 rounded-xl hover:bg-gray-800 transition-all duration-300 space-x-4">
+    <Phone className="w-5 h-5 text-green-400 mt-1 transition-transform duration-300 group-hover:scale-110" />
+    <div className="text-sm text-gray-200 space-y-1">
+      <a href="tel:+919444781692" className="block hover:text-green-400 transition">
+        +91 94447 81692
+      </a>
+      <a href="tel:+919150813029" className="block hover:text-green-400 transition">
+        +91 91508 13029
+      </a>
+      <a href="tel:+919444039232" className="block hover:text-green-400 transition">
+       +91 94440 39232
+      </a>
+    </div>
+  </div>
+</li>
+
               <li className="group">
-                <a
-                  href="tel:+919444781692"
-                  className="flex items-center p-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
-                >
-                  <Phone className="w-5 h-5 text-green-400 mr-3 transform transition-transform group-hover:scale-110" />
-                  <span className="hover:text-green-400 transition">+91 94447 81692</span>
-                </a>
-              </li>
-              <li className="group">
-                <div className="flex items-start p-3 rounded-lg hover:bg-gray-800 transition-all duration-300">
-                  <MapPin className="w-5 h-5 text-green-400 mr-3 mt-1 transform transition-transform group-hover:scale-110" />
-                  <span>38, 28, TVS Flats<br />Venkatnarayana Road, T. Nagar,<br />Chennai - 600017</span>
-                </div>
+              <div className="group flex items-start p-4 rounded-xl hover:bg-gray-800 transition-all duration-300 space-x-4">
+  <MapPin className="w-6 h-6 text-green-400 mt-1 transition-transform duration-300 group-hover:scale-110" />
+  <div className="text-sm text-gray-200 leading-relaxed">
+    <p className="font-semibold text-white">M.S. International</p>
+    <p>13A, Kamarajar Street</p>
+    <p>Vinayagam, Chennai - 600099</p>
+    <p className="mt-2">
+   
+    </p>
+  </div>
+</div>
+
               </li>
             </ul>
           </div>
