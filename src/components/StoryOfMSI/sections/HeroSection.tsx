@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
   The Story of{" "}
   <span className="relative">
     <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-700 text-transparent bg-clip-text">
-      Dr. S. Murugesan
+      MSInternational
     </span>
     <motion.span 
       className="absolute -bottom-2 left-0 w-full h-1 bg-green-400/60"
@@ -84,6 +84,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+          A visionary leader in the agricultural industry, Dr. S. Murugesan,
             A lifelong journey dedicated to reviving agriculture, 
             healing Earth, and empowering communities through sustainable practices
           </motion.p>

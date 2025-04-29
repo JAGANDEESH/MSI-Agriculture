@@ -11,7 +11,7 @@ const CallToAction: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="py-20 px-6 sm:px-10 bg-green-800 text-white relative overflow-hidden"
+      className="py-20 px-6 sm:px-10 bg-green-600 text-white relative overflow-hidden"
     >
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-green-700/50 -mt-20 -mr-20" />

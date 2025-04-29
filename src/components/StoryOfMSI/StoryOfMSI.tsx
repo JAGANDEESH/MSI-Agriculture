@@ -26,15 +26,16 @@ const StoryOfMSI: React.FC = () => {
         style={{ y: backgroundY }}
       />
       
-      <HeroSection />
-      <MissionSection />
-      <StatsSection />
-      <JourneySection />
-      <ProfileSection />
-      <QuoteCarousel />
-      <ImageGallery />
-      <CallToAction />
-      <ScrollToTop />
+      <div className="min-h-[4000px]">
+  <HeroSection />
+  <MissionSection />
+  <StatsSection />
+  <JourneySection />
+  <ProfileSection />
+  <QuoteCarousel />
+  <ImageGallery />
+  <CallToAction />
+</div>
     </div>
   );
 };
